@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { component} from 'react';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
-class home extends Component {
-	constructor(props){
+class App extends Component {
+    constructor(props){
         super(props);
 
         this.state={
@@ -42,7 +39,7 @@ class home extends Component {
     }
     render (){
         return (
-            <div classNAme="home">
+            <div classNAme="app">
                 <div>
                     Agregar Tarea...
                     <br/>
@@ -74,6 +71,9 @@ class home extends Component {
             </div>
         )
     }
-};
 
-export default home;
+}
+export default Home;
+
+
+

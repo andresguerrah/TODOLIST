@@ -15,7 +15,8 @@ const Home = () => {
 	return (
 		<div className="App">
             <Comp
-            nuevaTarea={nuevaTarea}
+           listaTareas={listaTareas}
+		   nuevaTarea={nuevaTarea}
             />
 		</div>
 	);

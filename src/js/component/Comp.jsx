@@ -6,33 +6,33 @@ const Comp = (props) => {
 	const [inputText, setInputText]=useState("");
 	
 	const manejarFormulario = (evento =>{
-		setInputText(event.target.value);
+		setInputText(evento.target.value);
 	})
 
 	const submit = (event) => {
 		event.preventDefault();
 		props.nuevaTarea(inputText);
 	}
-
-
+	//const eliminar = (event)=>{
+	//	listaTareas.filter((item) => item !== {nuevaTarea})//ojo aqui
+	//}
 
 	return (
 		<div className="content" onSubmit={submit}>
 			<h1>To Do List!</h1>
 			<input 
 				type={"text"}
-				value={imputText}
+				value={inputText}
 				onChange={manejarFormulario}
 			/>
-			<button>Agregar</button>
+			<button onClick={submit}>Agregar</button>
 			<div>
-			{tarea.map((valor, indice, arr)=>{
-				return 
-				<li key={indice}>{valor}
-				<button>X</button>
+			{props.listaTareas.map((valor, indice, arr)=>{
+				return <li key={indice}>{valor}
+				<button onClick={eliminar}>X</button>
 				</li>
 		})}</div>
-		<h5>Tareas Restantes: {tarea.length}</h5>
+		<h5>Tareas Restantes: {props.listaTareas.length}</h5>
 		</div>
 	);
 };
